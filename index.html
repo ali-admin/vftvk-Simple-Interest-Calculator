@@ -1,16 +1,87 @@
 <html>
     <head>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
     </head>
-    <body>
-        <h1>Simple Interest Calculator</h1>
+    <body  onload="getCurrentYear()">
+        <div class="calculas container">
+            <h1>Simple Interest Calculator</h1>
+            <div class="inputdata">
+                <div class="row">
+                    <div class="col-25">
+                        <label>Amount : </label>
+                    </div>
+                    <div class="col-75">
+                        <input type="number" autofocus id="amount">  <br/>      
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="slidecontainer">
+                        <label>Interest Rate : </label> <input type="range" min="0" max="100" step="0.25" value="0" class="slider"  id="rateRange" onchange="onChangeRange()"> &nbsp; <span class="bold" id="rateValue"></span>  %<br/>
+                    </div> 
+                </div>
 
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
+                <div class="row">
+                    <div class="col-25">
+                        <label>No. of Years : </label>
+                    </div>
 
-        <button onclick="compute()">Compute</button>
+                    <div class="col-75">
+                        <!--<input type="number"  id="years">  <br/>-->
+                        <select id="years" name="years">
+                            <option value=1>1 year</option>
+                            <option value=2>2 years</option>
+                            <option value=3>3 years</option>
+                            <option value=4>4 years</option>
+                            <option value=5>5 years</option>
+                            <option value=6>6 years</option>
+                            <option value=7>7 years</option>
+                            <option value=8>8 years</option>
+                            <option value=9>9 years</option>
+                            <option value=10>10 years</option>
+                            <option value=11>11 years</option>
+                            <option value=12>12 years</option>
+                            <option value=13>13 years</option>
+                            <option value=14>14 years</option>
+                            <option value=15>15 years</option>
+                            <option value=16>16 years</option>
+                            <option value=17>17 years</option>
+                            <option value=18>18 years</option>
+                            <option value=19>19 years</option>
+                            <option value=20>20 years</option>
+                            <option value=21>21 years</option>
+                            <option value=22>22 years</option>
+                            <option value=23>23 years</option>
+                            <option value=24>24 years</option>
+                            <option value=25>25 years</option>
+                        </select>
+                        <br>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="row">
+                    <button class="button button1" onclick="compute()"><span class="bold verdana">Compute</span></button> 
+                </div>
+                
+                
+
+                <pre hidden id="hiddenData">
+                            If you deposit <span id="depositAmount"></span>, 
+                            at an interest rate of <span id="totalRateAmount"></span>.
+                            You will receive an amount of <span id="totalInterestAmount"></span>
+                            in the year <span id="lastInterestYear"></span>
+                            <p style="direction: rtl;">Press (F5) key for more calculations</p>
+                </pre> <br>
+
+            </div>
+
+            <span>&copy;</span> <span id="currentYear"></span> <span style="font-family: sans-serif;">Everyone Can Get Rich</span>
+            
+        </div>
+
     </body>
 </html>
