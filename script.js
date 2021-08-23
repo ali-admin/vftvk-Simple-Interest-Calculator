@@ -9,8 +9,15 @@ function compute()
     totalInterestAmount = document.getElementById("totalInterestAmount");
     lastInterestYear = document.getElementById("lastInterestYear");
     result = document.getElementById("hiddenData");
-    
 
+    //Check if the value is null or 0
+    if (!a.value) 
+    {
+        alert("Please enter a positive number!!!");
+        location.reload();
+        return;
+    }
+	
     //Get Years Information
 	currentYear = new Date().getFullYear();
     currentMonth = new Date().getMonth();
@@ -42,5 +49,4 @@ function onChangeRange() {
 function getCurrentYear() {
 	currentYearValue = document.getElementById("currentYear");
 	currentYearValue.innerHTML = new Date().getFullYear();
-
 }
